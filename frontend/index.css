@@ -1,0 +1,112 @@
+/* Custom Design System Tokens and Utilities */
+
+/* Smooth animations and interactions */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.97);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Webkit scrollbar for terminal look and feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617; /* slate-950 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b; /* slate-800 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155; /* slate-700 */
+}
+
+/* Grid background pattern for the Visual Component Designer Canvas */
+.bg-grid-pattern {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(30, 41, 59, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 41, 59, 0.25) 1px, transparent 1px);
+  background-color: #020617; /* slate-950 */
+}
+
+/* Glassmorphism elements styling */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.6); /* slate-900 with opacity */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Interactive Component Palette items styling */
+.tab-btn {
+  color: #94a3b8; /* slate-400 */
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-btn:hover {
+  color: #f8fafc; /* slate-50 */
+  background: rgba(30, 41, 59, 0.4);
+}
+
+.tab-btn.active {
+  color: #ffffff;
+  background: #16a34a; /* brand-600 */
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+}
+
+/* Canvas Element hover states in Visual Designer */
+.canvas-element {
+  position: relative;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.canvas-element::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px dashed transparent;
+  border-radius: 6px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.canvas-element:hover::after {
+  border-color: #3b82f6; /* accent-blue */
+}
+
+.canvas-element.selected::after {
+  border-color: #22c55e; /* brand-500 */
+  border-style: solid;
+}
+
+.canvas-element .drag-handle {
+  display: none;
+}
+
+.canvas-element.selected .drag-handle {
+  display: flex;
+}
+
+/* Custom terminal color schemes */
+.term-info { color: #38bdf8; } /* cyan-400 */
+.term-warning { color: #facc15; } /* yellow-400 */
+.term-error { color: #f87171; } /* red-400 */
+.term-success { color: #4ade80; } /* green-400 */
+.term-debug { color: #94a3b8; } /* slate-400 */
+.term-timestamp { color: #64748b; margin-right: 8px; } /* slate-500 */

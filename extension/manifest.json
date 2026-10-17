@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "Full-Screen AI Chat",
+  "version": "1.0",
+  "permissions": ["tabs"],
+  "action": { "default_title": "Open Chat" },
+  "background": { "scripts": ["background.js"] }
+}
